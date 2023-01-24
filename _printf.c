@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == '%')
 			{
-				length = buffer_print(buffer, format[i], length);
+				length = buffer_input(buffer, format[i], length);
 				i++;
 			}
 			if (format[i + 1] == '\0')
