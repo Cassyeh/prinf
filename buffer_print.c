@@ -2,10 +2,10 @@
 #include <unistd.h>
 
 /**
- * print_buffer - prints buffer
- * @buffer: pointer to buffer string
- * @length: number of characters to be printed
- * Return: number of characters printed
+ * print_buffer - prints buffer.
+ * @buffer: pointer to buffer string.
+ * @length: number of characters to be printed.
+ * Return: number of characters printed.
  */
 int print_buffer(char *buffer, unsigned int length)
 {
