@@ -1,4 +1,4 @@
-#include "main.h"
+#include "2-main.h"
 
 /**
  * get_width - Calculates the width for printing

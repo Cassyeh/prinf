@@ -1,4 +1,4 @@
-#include "main.h"
+#include "2-main.h"
 
 /**
  * get_size -Calculates the size to cast the argument
