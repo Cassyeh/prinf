@@ -6,72 +6,64 @@
  */
 int _printf(const char *format, ...)
 {
-	int length = 0;
-	int total_length = 0;
-	int i, printed = 0;
-	int j = 0;
 	va_list list;
-	char buffer[1024];
-	char *str;
-	char* (*f)(va_list);
+	unsigned int i = 0, length = 0, printed_chars = 0;
+	int (*func)(va_list, char *, unsigned int);
+	char *buffer;
 
-	if (format == NULL)
-	{
-		return (-1);
-	}
 	va_start(list, format);
-
-	if (format[0] == '%' && format[1] == '\0')
+	buffer = malloc(sizeof(char) * 1024);
+	if (format == NULL || buffer == NULL ||
+	(format[i] == '%' && format[i + 1] == '\0'))
 	{
-		va_end(list);
 		return (-1);
 	}
-	for (i = 0; format[i] != '\0'; i++)
+	if (format[i] == '\0')
 	{
-		if (format[i] != '%')
+		return (0);
+	}
+	for (i = 0; format && format[i]; i++)
+	{
+		if (format[i] == '%')
 		{
-			buffer[length++] = format[i++];
-			if (length == 1024)
+			if (format[i + 1] == '\0')
 			{
-				print_buffer(buffer, length, list);
-			}
-			total_length++;
-		}
-		else
-		{
-			i++;
-			print_buffer(buffer, length, list);
-			f = get_func(format[i]);
-			printed = get_func(format[i]);
-			if (printed == -1)
-			{
+				print_buffer(buffer, length);
+				free(buffer);
 				va_end(list);
 				return (-1);
 			}
 			else
 			{
-				str = f(list);
-				if (str == NULL)
+				func = get_func(format, i + 1);
+				if (func == NULL)
 				{
-					va_end(list);
-					return (-1);
+					if (format[i + 1] == ' ' && !format[i + 2])
+					{
+						return (-1);
+					}
+					buffer_input(buffer, format[i], length);
+					printed_chars++;
+					i--;
 				}
-				if (format[i] == 'c' && str[0] == '\0')
+				else
 				{
-					buffer[length++] = '\0';
-					total_length++;
+					printed_chars += func(list, buffer, length);
+					i += get_func1(format, i + 1);
 				}
-				j = 0;
-				while (str[j] != '\0')
-				{
-					buffer[length++] = str[j];
-					total_length++;
-					j++;
-				}
-				free(str);
 			}
+			i++;
 		}
+		else
+		{
+			buffer_input(buffer, format[i], length);
+			printed_chars++;
+		}
+		for (length = printed_chars; length > 1024; length -= 1024)
+			;
 	}
-	print_buffer(buffer, length, list);
-	return (total_length);
+	print_buffer(buffer, length);
+	free(buffer);
+	va_end(list);
+	return (printed_chars);
 }

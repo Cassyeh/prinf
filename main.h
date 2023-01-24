@@ -11,21 +11,22 @@
  * @frmt: The format
  * @f: The function associated
  */
-typedef struct op
+typedef struct print
 {
-	char frmt;
-	int (*f)(va_list);
-} op_t;
+	char *frmt;
+	int (*f)(va_list, char *, unsigned int);
+} print_t;
 int _printf(const char *format, ...);
-int (*get_func(char s))(va_list list);
+int (*get_func(const char *s, int index))(va_list list, char *, unsigned int);
+int get_func1(const char *s, int index);
 int _putchar(char c);
-char *create_buffer(void);
-void print_buffer(char *buffer, int length, va_list list);
+int print_buffer(char *buffer, unsigned int length);
+unsigned int buffer_input(char *buffer, char c, unsigned int length);
 
 /* printf functions */
-int print_char(va_list list);
-int print_str(va_list list);
-int print_perc(va_list list);
+int print_char(va_list list, char *buffer, unsigned int length);
+int print_str(va_list list, char *buffer, unsigned int length);
+int print_perc(va_list c __attribute__((unused)), char *buffer, unsigned int length);
 int print_int(va_list list);
 int print_dec(va_list list);
 int print_bnry(va_list list);

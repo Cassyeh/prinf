@@ -2,26 +2,28 @@
 /**
  * print_str - prints a string
  * @list: list of arguments in this case, chars
+ * @buffer: pointer to buffer
+ * @length: amount of characters in current buffer
  * Return: number of chars printed
  */
-int print_str(va_list list)
+int print_str(va_list list, char *buffer, unsigned int length)
 {
-	int i;
-	int count = 0;
-	int length = 0;
-	char *str = va_arg(list, char *);
-
+	unsigned int i;
+	char null_str[] = "(null)";
+	char *str;
+	
+	str = va_arg(list, char *);
 	if (str == NULL)
 	{
-		str = "(null)";
+		for (i = 0; null_str[i]; i++)
+		{
+			length = buffer_input(buffer, null_str[i], length);
+		}
+		return (6);
 	}
-	while (str[length] != '\0')
+	for (i = 0; str[i]; i++)
 	{
-		length++;
+		length = buffer_input(buffer, str[i], length);
 	}
-	for (i = 0; i < length; i++)
-	{
-		count = count + _putchar(str[i]);
-	}
-	return (count);
+	return (i);
 }

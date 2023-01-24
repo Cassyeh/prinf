@@ -1,14 +1,15 @@
 #include "main.h"
-/**
- * print_perc - print a percent sign
- * @list: list of arguments
- * Return: number of chars printed
- */
-int print_perc(va_list list)
-{
-	char *a = va_arg(list, char *);
-	int count = 0;
+#include <stdio.h>
 
-	count = count + _putchar(a[0]);
-	return (count);
+/**
+ * print_perc - prints the percent(%) character
+ * @c: character to print
+ * @buffer: pointer to current buffer
+ * @length: amount of characters in current buffer
+ * Return: On success 1.
+ */
+int print_perc(va_list c __attribute__((unused)), char *buffer, unsigned int length)
+{
+	buffer_input(buffer, '%', length);
+	return (1);
 }

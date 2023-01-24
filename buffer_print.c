@@ -1,18 +1,32 @@
 #include "main.h"
-/**
- * print_buffer - Prints the contents of the buffer
- * @buffer: buffer containing string
- * @length: length of string in buffer
- * @list: va_list
- */
-void print_buffer(char *buffer, int length, va_list list)
-{
-	int i;
-	int count = 0;
+#include <unistd.h>
 
-	for (i = 0; i < length; i++)
+/**
+ * print_buffer - prints buffer
+ * @buffer: pointer to buffer string
+ * @length: number of characters to be printed
+ * Return: number of characters printed
+ */
+int print_buffer(char *buffer, unsigned int length)
+{
+	return (write(1, buffer, length));
+}
+
+/**
+ * buffer_input - inputs and concatenates the buffer characters
+ * @buffer: pointer to buffer
+ * @c: character to enter into buffer
+ * @length: length of current buffer
+ * Return: new length of buffer
+ */
+unsigned int buffer_input(char *buffer, char c, unsigned int length)
+{
+	if (length == 1024)
 	{
-		count = count + _putchar(buffer[i]);
+		print_buffer(buffer, length);
+		length = 0;
 	}
-	va_end(list);
+	buffer[length] = c;
+	length++;
+	return (length);
 }

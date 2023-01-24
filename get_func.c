@@ -6,45 +6,81 @@
  * @s: array to check
  * Return: return a function
  */
-int (*get_func(char s))(va_list)
+int (*get_func(const char *s, int index))(va_list, char *, unsigned int)
 {
-	op_t ops[] = {
-		{'c', print_char},
-		{'s', print_str},
-		{'%', print_perc},
-		{'d', print_dec},
-		{'i', print_int},
-		{'b', print_bnry},
-		{'o', print_oct},
-		{'u', print_unsgnd},
-		{'x', print_hex},
-		{'X', print_hex_upp},
-		{'\0', NULL}
+	print_t ops[] = {
+		{"c", print_char},
+		{"s", print_str},
+		{" %", print_perc},
+		{NULL, NULL}
 	};
 
-	int i, j = 0;
+	int i = 0;
+	int j = 0;
+	int index1 = index;
 
-	for (i = 0; ops[i].frmt != '\0'; i++)
+	while (ops[i].frmt)
 	{
-		if (s == ops[i].frmt)
+		if (s[index] == ops[i].frmt[j])
 		{
-			return (ops[i].f);
+			if (ops[i].frmt[j + 1] != '\0')
+			{
+				index++;
+				j++;
+			}
+			else
+			{
+				break;
+			}
 		}
-		i++;
+		else
+		{
+			j = 0;
+			i++;
+			index = index1;
+		}
 	}
-	if (ops[i].frmt == '\0')
+	return (ops[i].f);
+}
+
+/**
+ * get_func1 - search and return the correct function
+ * @s: array to check
+ * Return: return a function
+ */
+int get_func1(const char *s, int index)
+{
+	print_t ops[] = {
+		{"c", print_char},
+		{"s", print_str},
+		{" %", print_perc},
+		{NULL, NULL}
+	};
+
+	int i = 0;
+	int j = 0;
+	int index1 = index;
+
+	while (ops[i].frmt)
 	{
-		if (s == '\0')
+		if (s[index] == ops[i].frmt[j])
 		{
-			return (-1);
+			if (ops[i].frmt[j + 1] != '\0')
+			{
+				index++;
+				j++;
+			}
+			else
+			{
+				break;
+			}
 		}
-		j = j + _putchar('%');
-		if ((s - 1) == ' ')
+		else
 		{
-			j = j + _putchar(' ');
+			j = 0;
+			i++;
+			index = index1;
 		}
-		j = j + _putchar(s);
-		return (j);
 	}
-	return (-1);
+	return (j);
 }
