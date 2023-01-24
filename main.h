@@ -22,6 +22,8 @@ int get_func1(const char *s, int index);
 int _putchar(char c);
 int print_buffer(char *buffer, unsigned int length);
 unsigned int buffer_input(char *buffer, char c, unsigned int length);
+char *buffer_binary(char *binary, long int num_input, int num_neg, int max);
+
 /* printf functions */
 int print_char(va_list list, char *buffer, unsigned int length);
 int print_str(va_list list, char *buffer, unsigned int length);
@@ -29,7 +31,7 @@ int print_perc(va_list c __attribute__((unused)),
 char *, unsigned int);
 int print_int(va_list list, char *buffer, unsigned int length);
 int print_dec(va_list list, char *buffer, unsigned int length);
-int print_bnry(va_list list);
+int print_bnry(va_list list, char *buffer, unsigned int length);
 int print_oct(va_list list);
 int print_unsgnd(va_list list);
 int print_hex(va_list list);

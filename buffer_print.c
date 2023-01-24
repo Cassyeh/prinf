@@ -30,3 +30,39 @@ unsigned int buffer_input(char *buffer, char c, unsigned int length)
 	length++;
 	return (length);
 }
+
+/**
+ * buffer_binary - prints binary characters in buffer
+ * @binary: pointer to buffer converted to binary
+ * @num_input: input integer to be converted
+ * @num_neg: for negative input integer
+ * @max: maximum size of characters in a binary buffer
+ * Return: pointer to chars printed.
+ */
+char *buffer_binary(char *binary, long int num_input, int num_neg, int max)
+{
+	int i;
+
+	for (i = 0; i < max; i++)
+		binary[i] = '0';
+	binary[max] = '\0';
+	for (i = max -1; num_input > 1; i--)
+	{
+		if (num_input == 2)
+			binary[i] = '0';
+		else
+			binary[i] = (num_input % 2) + '0';
+		num_input = num_input / 2;
+	}
+	if (num_input != 0)
+		binary[i] = '1';
+	if (num_neg != 0)
+	{
+		for (i = 0; binary[i]; i++)
+			if (binary[i] == '0')
+				binary[i] = '1';
+			else
+				binary[i] = '0';
+	}
+	return (binary);
+}
