@@ -4,6 +4,7 @@
 /**
  * get_func - search and return the correct function
  * @s: array to check
+ * @index: index of array
  * Return: return a function
  */
 int (*get_func(const char *s, int index))(va_list, char *, unsigned int)
@@ -48,6 +49,7 @@ int (*get_func(const char *s, int index))(va_list, char *, unsigned int)
 /**
  * get_func1 - search and return the correct function
  * @s: array to check
+ * @index: index of array
  * Return: return a function
  */
 int get_func1(const char *s, int index)
