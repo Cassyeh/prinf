@@ -1,11 +1,9 @@
 #ifndef MAIN_H
 #define MAIN_H
-
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
 /**
  * struct print - Struct print
  *
@@ -24,12 +22,11 @@ int get_func1(const char *s, int index);
 int _putchar(char c);
 int print_buffer(char *buffer, unsigned int length);
 unsigned int buffer_input(char *buffer, char c, unsigned int length);
-
 /* printf functions */
 int print_char(va_list list, char *buffer, unsigned int length);
 int print_str(va_list list, char *buffer, unsigned int length);
 int print_perc(va_list c __attribute__((unused)),
-		char *, unsigned int);
+char *, unsigned int);
 int print_int(va_list list, char *buffer, unsigned int length);
 int print_dec(va_list list, char *buffer, unsigned int length);
 int print_bnry(va_list list);
