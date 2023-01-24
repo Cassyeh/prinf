@@ -61,7 +61,7 @@ int _printf(const char *format, ...)
 		}
 		for (length = printed_chars; length > 1024; length -= 1024)
 			;
-	}
+}
 	print_buffer(buffer, length);
 	free(buffer);
 	va_end(list);
