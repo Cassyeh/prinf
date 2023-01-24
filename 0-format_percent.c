@@ -8,7 +8,8 @@
  * @length: amount of characters in current buffer.
  * Return: On success 1.
  */
-int print_perc(va_list c __attribute__((unused)), char *buffer, unsigned int length)
+int print_perc(va_list c __attribute__((unused)), char *buffer,
+		unsigned int length)
 {
 	buffer_input(buffer, '%', length);
 	return (1);
