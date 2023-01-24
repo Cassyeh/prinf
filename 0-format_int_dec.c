@@ -15,7 +15,7 @@ int print_int(va_list list, char *buffer, unsigned int length)
 	count = 0;
 	if (num_input < 0)
 	{
-		num_absolute = num_input * - 1;
+		num_absolute = num_input * -1;
 		length = buffer_input(buffer, '-', length);
 		count = 1;
 	}
@@ -54,7 +54,7 @@ int print_dec(va_list list, char *buffer, unsigned int length)
 	count = 0;
 	if (num_input < 0)
 	{
-		num_absolute = num_input * - 1;
+		num_absolute = num_input * -1;
 		length = buffer_input(buffer, '-', length);
 		count = 1;
 	}

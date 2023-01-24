@@ -9,7 +9,7 @@
 int print_char(va_list list, char *buffer, unsigned int length)
 {
 	char c;
-	
+
 	c = va_arg(list, int);
 	buffer_input(buffer, c, length);
 	return (1);

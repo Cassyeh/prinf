@@ -11,7 +11,7 @@ int print_str(va_list list, char *buffer, unsigned int length)
 	unsigned int i;
 	char null_str[] = "(null)";
 	char *str;
-	
+
 	str = va_arg(list, char *);
 	if (str == NULL)
 	{

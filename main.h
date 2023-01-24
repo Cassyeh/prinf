@@ -1,12 +1,13 @@
 #ifndef MAIN_H
 #define MAIN_H
+
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
 /**
- * struct op - Struct op
+ * struct print - Struct print
  *
  * @frmt: The format
  * @f: The function associated
@@ -27,7 +28,8 @@ unsigned int buffer_input(char *buffer, char c, unsigned int length);
 /* printf functions */
 int print_char(va_list list, char *buffer, unsigned int length);
 int print_str(va_list list, char *buffer, unsigned int length);
-int print_perc(va_list c __attribute__((unused)), char *buffer, unsigned int length);
+int print_perc(va_list c __attribute__((unused)),
+		char *, unsigned int);
 int print_int(va_list list, char *buffer, unsigned int length);
 int print_dec(va_list list, char *buffer, unsigned int length);
 int print_bnry(va_list list);
