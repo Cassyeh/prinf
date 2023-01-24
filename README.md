@@ -1,4 +1,4 @@
-#C - printf team project
+# C - printf team project
 
 <u>Description</u>
 The _printf() function produces output according to a format which is given. The functions will write output to stdout, the standard output stream. The function returns the number of characters printed (excluding the null byte used to end output to strings) when successful. 

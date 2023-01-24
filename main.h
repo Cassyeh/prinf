@@ -13,9 +13,10 @@
  */
 typedef struct print
 {
-	char *frmt;
-	int (*f)(va_list, char *, unsigned int);
-} print_t;
+char *frmt;
+int (*f)(va_list, char *, unsigned int);
+} 
+print_t;
 int _printf(const char *format, ...);
 int (*get_func(const char *s, int index))(va_list list, char *, unsigned int);
 int get_func1(const char *s, int index);

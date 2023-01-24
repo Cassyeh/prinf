@@ -52,37 +52,37 @@ int (*get_func(const char *s, int index))(va_list, char *, unsigned int)
  */
 int get_func1(const char *s, int index)
 {
-	print_t ops[] = {
-		{"c", print_char},
-		{"s", print_str},
-		{" %", print_perc},
-		{NULL, NULL}
-	};
+print_t ops[] = {
+{"c", print_char},
+{"s", print_str},
+{" %", print_perc},
+{NULL, NULL}
+};
 
-	int i = 0;
-	int j = 0;
-	int index1 = index;
+int i = 0;
+int j = 0;
+int index1 = index;
 
-	while (ops[i].frmt)
-	{
-		if (s[index] == ops[i].frmt[j])
-		{
-			if (ops[i].frmt[j + 1] != '\0')
-			{
-				index++;
-				j++;
-			}
-			else
-			{
-				break;
-			}
-		}
-		else
-		{
-			j = 0;
-			i++;
-			index = index1;
-		}
-	}
-	return (j);
+while (ops[i].frmt)
+{
+if (s[index] == ops[i].frmt[j])
+{
+if (ops[i].frmt[j + 1] != '\0')
+{
+index++;
+j++;
+}
+else
+{
+break;
+}
+}
+else
+{
+j = 0;
+i++;
+index = index1;
+}
+}
+return (j);
 }
