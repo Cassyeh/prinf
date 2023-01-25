@@ -1,8 +1,8 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * main - sample main programs.
- * Return:  0 on success.
+ * main - sample main programs
+ * Return:  0 on success
  */
 int main(void)
 {
