@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * print_oct - prints decimal integer in base 8
- * @list: list of arguments in this case, integers
+ * print_oct - prints decimal integer in base 8.
+ * @list: list of arguments in this case, integers.
  * @buffer: pointer to buffer.
- * @length: amount of characters in current buffer
+ * @length: amount of characters in current buffer.
  * Return: number of chars printed.
  */
 int print_oct(va_list list, char *buffer, unsigned int length)
