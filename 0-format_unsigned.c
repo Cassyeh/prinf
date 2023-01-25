@@ -21,7 +21,7 @@ int print_unsgnd(va_list list, char *buffer, unsigned int length)
 	}
 	for (i = 0; divisor > 0; i++)
 	{
-		length = buffer_input(buffer, ((num_absolute / divisor) % 10) + '0', length);
+		length = buffer_input(buffer, ((num_input / divisor) % 10) + '0', length);
 		divisor = divisor / 10;
 	}
 	return (i);

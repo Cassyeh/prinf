@@ -22,7 +22,7 @@ char *buffer_oct(char *binary, char *octal)
 		}
 		for (op = 0, j = 1; j <= max; j *= 2, i--)
 		{
-			op = ((bnr[i] - '0') * j) + op;
+			op = ((binary[i] - '0') * j) + op;
 		}
 		i++;
 		octal[num_oct] = op + '0';

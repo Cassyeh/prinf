@@ -10,7 +10,7 @@ int print_oct(va_list list, char *buffer, unsigned int length)
 {
 	int num_input;
 	int count, i, num1, num_neg;
-	char *binary, octal;
+	char *binary, *octal;
 
 	num_input = va_arg(list, int);
 	num_neg = 0;
