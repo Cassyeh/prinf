@@ -6,7 +6,7 @@
  * @length: amount of characters in current buffer
  * Return: number of chars printed.
  */
-int print_hex(va_list list, char *buffer, unsigned int length)
+int print_hex_upp(va_list list, char *buffer, unsigned int length)
 {
 	int int_input, i, isnegative, count, first_digit;
 	char *hexadecimal, *binary;
@@ -26,7 +26,7 @@ int print_hex(va_list list, char *buffer, unsigned int length)
 	binary = malloc(sizeof(char) * (32 + 1));
 	binary = buffer_binary(binary, int_input, isnegative, 32);
 	hexadecimal = malloc(sizeof(char) * (8 + 1));
-	hexadecimal = buffer_hex(binary, hexadecimal, 0, 8);
+	hexadecimal = buffer_hex(binary, hexadecimal, 1, 8);
 	for (first_digit = i = count = 0; hexadecimal[i]; i++)
 	{
 		if (hexadecimal[i] != '0' && first_digit == 0)
