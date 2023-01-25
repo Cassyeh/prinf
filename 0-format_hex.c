@@ -11,7 +11,7 @@ int print_hex(va_list list, char *buffer, unsigned int length)
 	int int_input, i, isnegative, count, first_digit;
 	char *hexadecimal, *binary;
 
-	int_input = va_arg(arguments, int);
+	int_input = va_arg(list, int);
 	isnegative = 0;
 	if (int_input == 0)
 	{
@@ -33,7 +33,7 @@ int print_hex(va_list list, char *buffer, unsigned int length)
 			first_digit = 1;
 		if (first_digit)
 		{
-			length = length(buffer, hexadecimal[i], length);
+			length = buffer_input(buffer, hexadecimal[i], length);
 			count++;
 		}
 	}
