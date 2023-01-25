@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * buffer_oct - prints octal characters in buffer.
- * @binary: pointer to buffer converted to binary.
- * @octal: pointer to buffer converted to octal.
- * Return: pointer to chars printed.
+ * buffer_oct - prints octal characters in buffer
+ * @binary: pointer to buffer converted to binary
+ * @octal: pointer to buffer converted to octal
+ * Return: pointer to chars printed
  */
 char *buffer_oct(char *binary, char *octal)
 {
