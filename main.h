@@ -38,7 +38,7 @@ int print_oct(va_list list, char *buffer, unsigned int length);
 int print_unsgnd(va_list list, char *buffer, unsigned int length);
 int print_hex(va_list list, char *buffer, unsigned int length);
 int print_hex_upp(va_list list, char *buffer, unsigned int length);
-int print_nonprint(va_list list);
+int print_nonprint(va_list list, char *buffer, unsigned int length););
 int print_ptr(va_list list);
 int print_revstr(va_list list);
 int print_rot13(va_list list);
