@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * print_str - prints a string.
- * @list: list of arguments in this case, chars.
- * @buffer: pointer to buffer.
- * @length: amount of characters in current buffer.
- * Return: number of chars printed.
+ * print_str - prints a string
+ * @list: list of arguments in this case, chars
+ * @buffer: pointer to buffer
+ * @length: amount of characters in current buffer
+ * Return: number of chars printed
  */
 int print_str(va_list list, char *buffer, unsigned int length)
 {
