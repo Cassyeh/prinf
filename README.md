@@ -1,6 +1,11 @@
 # C - printf team project
 
-<u>Description</u>
+## Synopsis
+
+This is a simple implementation of printf function that formats and prints data
+
+## Description
+
 The _printf() function produces output according to a format which is given. The functions will write output to stdout, the standard output stream. The function returns the number of characters printed (excluding the null byte used to end output to strings) when successful. 
 format is a character string. The format string is composed of zero or more directives.
 The conversion specifiers handled in this project include:
