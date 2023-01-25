@@ -13,5 +13,6 @@ int main(void)
 	_printf("String:[%s]\n", "I am a string !");
 	printf("String:[%s]\n", "I am a string !");
 	_printf("10 in binary is [%b], in octal is [%o] and in hexadecimal is [%X]", 10, 10, 10);
+	_printf("%S\n", "Best\nSchool");
 	return (0);
 }
