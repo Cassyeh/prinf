@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_char - prints a char.
+ * print_char - prints a char
  * @list: character to be printed
  * @buffer: pointer to buffer
  * @length: amount of characters in current buffer
