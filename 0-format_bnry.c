@@ -2,9 +2,9 @@
 /**
  * print_bnry - prints integer in binary
  * @list: list of arguments in this case, integers
- * @buffer: pointer to buffer.
+ * @buffer: pointer to buffer
  * @length: amount of characters in current buffer
- * Return: number of chars printed.
+ * Return: number of chars printed
  */
 int print_bnry(va_list list, char *buffer, unsigned int length)
 {

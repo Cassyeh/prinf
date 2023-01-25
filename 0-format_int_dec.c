@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * print_int - prints an integer.
- * @list: list of arguments in this case, integers.
+ * print_int - prints an integer
+ * @list: list of arguments in this case, integers
  * @buffer: pointer to buffer
- * @length: amount of characters in current buffer.
- * Return: number of chars printed.
+ * @length: amount of characters in current buffer
+ * Return: number of chars printed
  */
 int print_int(va_list list, char *buffer, unsigned int length)
 {
