@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * print_unsgnd - prints an unsigned integer.
- * @list: list of arguments in this case, unsigned integers.
+ * print_unsgnd - prints an unsigned integer
+ * @list: list of arguments in this case, unsigned integers
  * @buffer: pointer to buffer
- * @length: amount of characters in current buffer.
- * Return: number of chars printed.
+ * @length: amount of characters in current buffer
+ * Return: number of chars printed
  */
 int print_unsgnd(va_list list, char *buffer, unsigned int length)
 {
