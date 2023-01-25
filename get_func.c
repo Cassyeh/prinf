@@ -19,6 +19,7 @@ int (*get_func(const char *s, int index))(va_list, char *, unsigned int)
 		{"o", print_oct},
 		{"x", print_hex},
 		{"X", print_hex_upp},
+		{"S", print_nonprint},
 		{" %", print_perc},
 		{NULL, NULL}
 	};
@@ -69,6 +70,7 @@ int get_func1(const char *s, int index)
 		{"o", print_oct},
 		{"x", print_hex},
 		{"X", print_hex_upp},
+		{"S", print_nonprint},
 		{" %", print_perc},
 		{NULL, NULL}
 	};
