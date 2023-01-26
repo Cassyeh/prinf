@@ -24,6 +24,8 @@ int print_buffer(char *buffer, unsigned int length);
 unsigned int buffer_input(char *buffer, char c, unsigned int length);
 char *buffer_binary(char *binary, long int num_input, int num_neg, int max);
 char *buffer_oct(char *binary, char *octal);
+char *buffer_long_oct(char *binary, char *octal);
+char *buffer_short_oct(char *binary, char *octal);
 char *buffer_hex(char *binary, char *hex, int isupper, int max);
 
 /* printf functions */
