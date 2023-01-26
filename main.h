@@ -43,4 +43,11 @@ int print_ptr(va_list list, char *buffer, unsigned int length);
 int print_revstr(va_list list);
 int print_rot13(va_list list);
 
+/* flag characters functions */
+int plus_int(va_list list, char *buffer, unsigned int length);
+int space_int(va_list list, char *buffer, unsigned int length);
+int hash_oct(va_list list, char *buffer, unsigned int length);
+int hash_hex(va_list list, char *buffer, unsigned int length);
+int hash_hex_upp(va_list list, char *buffer, unsigned int length);
+
 #endif
