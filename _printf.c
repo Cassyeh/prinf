@@ -1,37 +1,74 @@
 #include "main.h"
-
 /**
- * _printf - Receives the main string and all the necessary parameters to
- * print a formated string
- * @format: A string containing all the desired characters
- * Return: A total count of the characters printed
+ * _printf - Printf function
+ * @format: format type identifiers
+ * Return: string with identifiers
  */
 int _printf(const char *format, ...)
 {
-	int printed_chars;
-	conver_t f_list[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_percent},
-		{"d", print_integer},
-		{"i", print_integer},
-		{"b", print_binary},
-		{"r", print_reversed},
-		{"R", rot13},
-		{"u", unsigned_integer},
-		{"o", print_octal},
-		{"x", print_hex},
-		{"X", print_heX},
-		{NULL, NULL}
-	};
-	va_list arg_list;
+	va_list list;
+	unsigned int i = 0, length = 0, printed_chars = 0;
+	int (*func)(va_list, char *, unsigned int);
+	char *buffer;
 
-	if (format == NULL)
+	va_start(list, format);
+	buffer = malloc(sizeof(char) * 1024);
+	if (format == NULL || buffer == NULL ||
+	(format[i] == '%' && format[i + 1] == '\0'))
+	{
 		return (-1);
-
-	va_start(arg_list, format);
-	/*Calling parser function*/
-	printed_chars = parser(format, f_list, arg_list);
-	va_end(arg_list);
+	}
+	if (format[i] == '\0')
+	{
+		return (0);
+	}
+	for (i = 0; format && format[i]; i++)
+	{
+		if (format[i] == '%')
+		{
+			if (format[i + 1] == '%')
+			{
+				length = buffer_input(buffer, format[i], length);
+				i++;
+			}
+			if (format[i + 1] == '\0')
+			{
+				print_buffer(buffer, length);
+				free(buffer);
+				va_end(list);
+				return (-1);
+			}
+			else
+			{
+				func = get_func(format, i + 1);
+				if (func == NULL)
+				{
+					if (format[i + 1] == ' ' && !format[i + 2])
+					{
+						return (-1);
+					}
+					buffer_input(buffer, format[i], length);
+					printed_chars++;
+					i--;
+				}
+				else
+				{
+					printed_chars += func(list, buffer, length);
+					i += get_func1(format, i + 1);
+				}
+			}
+			i++;
+		}
+		else
+		{
+			buffer_input(buffer, format[i], length);
+			printed_chars++;
+		}
+		for (length = printed_chars; length > 1024; length -= 1024)
+			;
+}
+	print_buffer(buffer, length);
+	free(buffer);
+	va_end(list);
 	return (printed_chars);
 }
