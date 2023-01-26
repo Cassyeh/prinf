@@ -12,8 +12,8 @@
  */
 typedef struct print
 {
-char *frmt;
-int (*f)(va_list, char *, unsigned int);
+	char *frmt;
+	int (*f)(va_list, char *, unsigned int);
 } 
 print_t;
 int _printf(const char *format, ...);
@@ -49,5 +49,19 @@ int space_int(va_list list, char *buffer, unsigned int length);
 int hash_oct(va_list list, char *buffer, unsigned int length);
 int hash_hex(va_list list, char *buffer, unsigned int length);
 int hash_hex_upp(va_list list, char *buffer, unsigned int length);
+
+/* long conversion functions */
+int long_int(va_list list, char *buffer, unsigned int length);
+int long_oct(va_list list, char *buffer, unsigned int length);
+int long_unsgnd(va_list list, char *buffer, unsigned int length);
+int long_hex(va_list list, char *buffer, unsigned int length);
+int long_hexupp(va_list list, char *buffer, unsigned int length);
+
+/* long conversion functions */
+int short_int(va_list list, char *buffer, unsigned int length);
+int short_oct(va_list list, char *buffer, unsigned int length);
+int short_unsgnd(va_list list, char *buffer, unsigned int length);
+int short_hex(va_list list, char *buffer, unsigned int length);
+int short_hexupp(va_list list, char *buffer, unsigned int length);
 
 #endif
