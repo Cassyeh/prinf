@@ -12,7 +12,6 @@ int plus_int(va_list list, char *buffer, unsigned int length)
 	unsigned int num_absolute, num_temp, i, divisor;
 
 	num_input = va_arg(list, int);
-	count = 0;
 	if (num_input < 0)
 	{
 		num_absolute = num_input * -1;
@@ -50,7 +49,6 @@ int space_int(va_list list, char *buffer, unsigned int length)
 	unsigned int num_absolute, num_temp, i, divisor;
 
 	num_input = va_arg(list, int);
-	count = 0;
 	if (num_input < 0)
 	{
 		num_absolute = num_input * -1;

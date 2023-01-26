@@ -1,4 +1,4 @@
-#include "main.h"
+#include "0-main.h"
 #include <stdio.h>
 int hex_check(int, char);
 
@@ -87,7 +87,7 @@ int print_octal(va_list list)
  * @list: List of the arguments passed to the function
  * Return: Number of characters printed
  */
-int print_hex(va_list list)
+int print_hexa(va_list list)
 {
 	unsigned int num;
 	int len;
