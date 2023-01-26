@@ -44,7 +44,7 @@ int long_int(va_list list, char *buffer, unsigned int length)
  * @length: amount of characters in current buffer
  * Return: number of chars printed
  */
-int print_unsgnd(va_list list, char *buffer, unsigned int length)
+int long_unsgnd(va_list list, char *buffer, unsigned int length)
 {
 	unsigned long int num_input;
 	unsigned long int num_temp, i, divisor;
